@@ -29,6 +29,7 @@ def top_scores(data, n=5):
 def ensure_data_file():
     if not os.path.exists("data.json"):
         print("No data.json found, generating new dataset...")
+        print("One more print")
         dataset = dg.generate_dataset(100)
         dg.save_dataset(dataset)
     return dg.load_dataset()
@@ -36,8 +37,6 @@ def ensure_data_file():
 
 def report():
     data = ensure_data_file()
-    print("--- Data Analysis Report ---")
-    print(f"Total records: {len(data)}")
     print(f"Average score: {average_score(data):.2f}")
     print("Age distribution:")
     for group, count in age_distribution(data).items():
