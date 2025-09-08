@@ -1,7 +1,4 @@
 import statistics
-import os
-
-import data_generator as dg
 
 
 def average_score(data):
@@ -27,12 +24,7 @@ def top_scores(data, n=5):
 
 
 def ensure_data_file():
-    if not os.path.exists("data.json"):
-        print("No data.json found, generating new dataset...")
-        print("One more print")
-        dataset = dg.generate_dataset(100)
-        dg.save_dataset(dataset)
-    return dg.load_dataset()
+    return [{"mock_field": f"mock_value_{i}"} for i in range(1, 100 + 1)]
 
 
 def report():
