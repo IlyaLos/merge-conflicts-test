@@ -42,6 +42,7 @@ def load_dataset(filename: str = "data.json") -> list:
 
 
 if __name__ == "__main__":
+    print("Start generating data")
     dataset = generate_dataset(100)
     save_dataset(dataset)
     print(f"Generated and saved {len(dataset)} records to data.json")
